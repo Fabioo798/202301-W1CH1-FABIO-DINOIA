@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>document</title>
+    <link rel="stylesheet" href="style.css">
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js'></script>
+    
+</head>
+<body>
+    <div class="rules" id="rules">
+        <ul>
+            <h1 class='double-border-text'>PASAPALABRA</h1>
+            <li>Answer one question per each alphabet letter</li>
+            <li>You have 130 seconds in total</li>
+            <li>Answer a question later by pressing "Pasapalabra"</li>
+            <li>Good luck! Press "start" to begin the game</li>
+        </ul>
+    </div>
+        <div class="button">
+            <button class="btn" onclick="countDown(); hideButton(this); showGame()">START</button>
+        </div>
+        <div id="game" class="game" hidden>
+            <p id="question" class="question">ciao</p>
+            <br>
+            <div class="button">
+                <button id="pasapalabra" type="button" class="btn" onclick="nextQuestion()">PASAPALABRA</button>
+                <button id="stop" type="button" class="btn" onclick="openPopup()">STOP</button>
+                <button id="round" type="button" class="btn" disabled>ROUND: 1</button>
+                <button id="points" type="button" class="btn" disabled>POINTS: 0</button>
+                <button id="stopwatch" type="button" class="btn" disabled>GO!</button>
+                
+                
+            </div>
+            <section>
+            <div class="inputSection">
+                <input type="text" class="inputField" placeholder="Answer here"></input>
+            <button type="button" class="btn" onclick="wordInserted(document.querySelector('.inputField').value)" hidden>OK</button>
+            </div>
+        </div>
+        <div class="popup" id="popup">
+            <p>are you sure you want to quit and restart the game?</p>
+            <button id="restartgame" type="button" class="btn" onclick="restartGame()">RESTART</button>
+            <button id="closepopup" type="button" class="btn" onclick="closePopup()">KEEP PLAYING</button>
+        </div>
+        
+    <div class="container">
+        <div class="circle">
+                    <div id="text" class="text">
+                        <p class="letter">A</p>
+                        <p class="letter">B</p>
+                        <p class="letter">C</p>
+                        <p class="letter">D</p>
+                        <p class="letter">E</p>
+                        <p class="letter">F</p>
+                        <p class="letter">G</p>
+                        <p class="letter">H</p>
+                        <p class="letter">I</p>
+                        <p class="letter">J</p>
+                        <p class="letter">K</p>
+                        <p class="letter">L</p>
+                        <p class="letter">M</p>
+                        <p class="letter">N</p>
+                        <p class="letter">Ñ</p>
+                        <p class="letter">O</p>
+                        <p class="letter">P</p>
+                        <p class="letter">Q</p>
+                        <p class="letter">R</p>
+                        <p class="letter">S</p>
+                        <p class="letter">T</p>
+                        <p class="letter">U</p>
+                        <p class="letter">V</p>
+                        <p class="letter">W</p>
+                        <p class="letter">X</p>
+                        <p class="letter">Y</p>
+                        <p class="letter">Z</p>
+                    </div>
+                </div>
+            </div>
+        </container>
+        <table id="content-table" class="content-table" hidden>
+            <thead>
+              <tr>
+                <th>Rank</th>
+                <th>Name</th>
+                <th>Points</th>
+                <th>Rounds</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr class="active-row">
+                <td>1</td>
+                <td class="name1">prueba</td>
+                <td class="points1">prueba</td>
+                <td class="round1">prueba</td>
+              </tr>
+              <tr>
+                <td >2</td>
+                <td class="name2">prueba</td>
+                <td class="points2">72,400</td>
+                <td class="round2">Students</td>
+              </tr>
+              <tr>
+                <td>3</td>
+                <td class="name3">Nick</td>
+                <td class="point3">52,300</td>
+                <td class="round3">dcode</td>
+              </tr>
+              <tr>
+                <td>4</td>
+                <td class="name4">Nick</td>
+                <td class="point4">52,300</td>
+                <td class="round4">dcode</td>
+              </tr>
+            </tbody>  
+          </table>
+          <h1 id="gameover" class="gameover" hidden>GAME OVER!</h1>
+          <button id="playagain" type="button" class="btn" onclick="restartGame()" hidden>RESTART</button>
+    <script>
+        
+        const text = document.querySelector('.text');
+        text.innerHTML = text.innerText.split('').map(
+            (char, i) =>
+            `<span class="letterstyle" style="transform:rotate(${i * 4.45}deg)">${char}</span>`
+        ).join('');
+        const letters = document.getElementById("text").querySelectorAll(".letterstyle"); 
+    </script>
+    <script  src="./script.js"></script>
+</body>
+</html>
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <script type="text/javascript" src="script.js"></script>
+    <title>Pasapalabra</title>
+</head>
+<body>
+    <header>
+        <h1 class="circular">testing circular text</h1>
+    </header>
+    <main>
+    </main>
+    
+</body>
+</html> -->
+
+
+
+
+
+
+
+
